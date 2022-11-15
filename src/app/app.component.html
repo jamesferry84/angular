@@ -1,3 +1,10 @@
 <div class="container">
-  Angular app sandbox
+  <div class="row">
+    <app-gamecontrol (emitCounter)="onCounterEmitted($event)"></app-gamecontrol>
+  </div>
+  <div class="row">
+    <app-even *ngFor="let item of evenNumbers" [count]="item"></app-even>
+    <app-odd *ngFor="let item of oddNumbers" [count]="item"></app-odd>
+  </div>
+
 </div>
