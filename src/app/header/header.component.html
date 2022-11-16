@@ -1,9 +1,14 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" routerLink="/">Recipe Book</a>
-      <a class="navbar-brand" routerLink="/recipes">Recipes</a>
-      <a class="navbar-brand" routerLink="/shopping">Shopping List</a>
+      <a class="navbar-brand"
+         routerLinkActive="active"
+         routerLink="/"
+      [routerLinkActiveOptions]="{exact: true}">
+        Recipe Book
+      </a>
+      <a class="navbar-brand" routerLinkActive="active" routerLink="recipes">Recipes</a>
+      <a class="navbar-brand" routerLinkActive="active" routerLink="shopping">Shopping List</a>
     </div>
   </div>
 </nav>

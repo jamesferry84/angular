@@ -13,14 +13,10 @@ import {RecipeDetailComponent} from './recipe/recipe-detail/recipe-detail.compon
 import {HeaderComponent} from './header/header.component';
 import {BasicHighlightDirective} from "./directives/basic-highlight.directive";
 import {DropdownDirective} from "./directives/dropdown.directive";
-import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
+import {AppRoutingModule} from "./app-routing.module";
 
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'recipes', component: RecipeComponent},
-  {path: 'shopping', component: ShoppingComponent}
-];
+
 
 @NgModule({
   declarations: [
@@ -40,7 +36,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

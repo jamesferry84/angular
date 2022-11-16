@@ -8,6 +8,13 @@
     </ul>
   </div>
 
-  <p>description: </p>
+  <p>Id: {{recipe.id}}</p>
+  <p>description: {{recipe.description}}</p>
   <p>Ingredients: </p>
+
+  <a
+    [routerLink]="['/recipes', 5]"
+    [queryParams]="{allowEdit: '1'}"
+    fragment="loading"
+  >Load recipe 5</a>
 </div>
