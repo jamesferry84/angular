@@ -15,6 +15,8 @@ import {BasicHighlightDirective} from "./directives/basic-highlight.directive";
 import {DropdownDirective} from "./directives/dropdown.directive";
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
+import {AuthService} from "./auth.service";
+import {AuthGuard} from "./auth-guard.service";
 
 
 
@@ -38,7 +40,7 @@ import {AppRoutingModule} from "./app-routing.module";
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

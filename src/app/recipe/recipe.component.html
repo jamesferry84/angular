@@ -5,4 +5,10 @@
   <button class="btn btn-success" (click)="loadHome()">Go Home</button>
   <button class="btn btn-primary" (click)="reload()">Reload page</button>
 
+  <a
+    [routerLink]="['/recipes', 5]"
+    [queryParams]="{allowEdit: '1'}"
+    fragment="loading"
+  >Load recipe 5</a>
+
 </div>
