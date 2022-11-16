@@ -12,6 +12,7 @@ import { RecipeItemComponent } from './recipe/recipe-item/recipe-item.component'
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { HeaderComponent } from './header/header.component';
 import {BasicHighlightDirective} from "./directives/basic-highlight.directive";
+import {DropdownDirective} from "./directives/dropdown.directive";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {BasicHighlightDirective} from "./directives/basic-highlight.directive";
     RecipeItemComponent,
     RecipeDetailComponent,
     HeaderComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
