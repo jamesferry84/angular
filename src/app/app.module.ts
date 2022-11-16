@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ShoppingComponent} from './shopping/shopping.component';
 import {ShoppingListComponent} from './shopping/shopping-list/shopping-list.component';
 import {ShoppingEditComponent} from './shopping/shopping-edit/shopping-edit.component';
@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {AuthService} from "./auth.service";
 import {AuthGuard} from "./auth-guard.service";
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -33,12 +34,14 @@ import {AuthGuard} from "./auth-guard.service";
     HeaderComponent,
     BasicHighlightDirective,
     DropdownDirective,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
