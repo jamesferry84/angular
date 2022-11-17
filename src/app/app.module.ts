@@ -18,6 +18,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AuthService} from "./auth.service";
 import {AuthGuard} from "./auth-guard.service";
 import { RegisterComponent } from './register/register.component';
+import {ShortenPipe} from "./pipes/shorten.pipe";
 
 
 
@@ -35,7 +36,8 @@ import { RegisterComponent } from './register/register.component';
     BasicHighlightDirective,
     DropdownDirective,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,
