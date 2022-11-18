@@ -3,13 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ShoppingComponent} from './shopping/shopping.component';
-import {ShoppingListComponent} from './shopping/shopping-list/shopping-list.component';
-import {ShoppingEditComponent} from './shopping/shopping-edit/shopping-edit.component';
-import {RecipeComponent} from './recipe/recipe.component';
-import {RecipeListComponent} from './recipe/recipe-list/recipe-list.component';
-import {RecipeItemComponent} from './recipe/recipe-item/recipe-item.component';
-import {RecipeDetailComponent} from './recipe/recipe-detail/recipe-detail.component';
 import {HeaderComponent} from './header/header.component';
 import {BasicHighlightDirective} from "./directives/basic-highlight.directive";
 import {DropdownDirective} from "./directives/dropdown.directive";
@@ -20,25 +13,20 @@ import {AuthGuard} from "./auth-guard.service";
 import { RegisterComponent } from './register/register.component';
 import {ShortenPipe} from "./pipes/shorten.pipe";
 import {HttpClientModule} from "@angular/common/http";
+import { ExpenseComponent } from './expense/expense.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    RecipeComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeDetailComponent,
     HeaderComponent,
     BasicHighlightDirective,
     DropdownDirective,
     HomeComponent,
     RegisterComponent,
-    ShortenPipe
+    ShortenPipe,
+    ExpenseComponent
   ],
   imports: [
     BrowserModule,
