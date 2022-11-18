@@ -19,6 +19,7 @@ import {AuthService} from "./auth.service";
 import {AuthGuard} from "./auth-guard.service";
 import { RegisterComponent } from './register/register.component';
 import {ShortenPipe} from "./pipes/shorten.pipe";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -43,7 +44,8 @@ import {ShortenPipe} from "./pipes/shorten.pipe";
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
