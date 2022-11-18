@@ -13,14 +13,16 @@ import {RecipeDetailComponent} from './recipe/recipe-detail/recipe-detail.compon
 import {HeaderComponent} from './header/header.component';
 import {BasicHighlightDirective} from "./directives/basic-highlight.directive";
 import {DropdownDirective} from "./directives/dropdown.directive";
-import { HomeComponent } from './home/home.component';
+import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {AuthService} from "./auth.service";
 import {AuthGuard} from "./auth-guard.service";
-import { RegisterComponent } from './register/register.component';
+import {RegisterComponent} from './register/register.component';
 import {ShortenPipe} from "./pipes/shorten.pipe";
-import {HttpClientModule} from "@angular/common/http";
-
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {HttpExampleComponent} from './http-example/http-example.component';
+import {AuthInterceptorService} from "./interceptors/auth-interceptor.service";
+import {LoggingInterceptorService} from "./interceptors/logging-interceptor.service";
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import {HttpClientModule} from "@angular/common/http";
     DropdownDirective,
     HomeComponent,
     RegisterComponent,
-    ShortenPipe
+    ShortenPipe,
+    HttpExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,18 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptorService,
+      multi: true
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

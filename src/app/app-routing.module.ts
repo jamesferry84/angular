@@ -6,6 +6,7 @@ import {RecipeDetailComponent} from "./recipe/recipe-detail/recipe-detail.compon
 import {ShoppingComponent} from "./shopping/shopping.component";
 import {AuthGuard} from "./auth-guard.service";
 import {RegisterComponent} from "./register/register.component";
+import {HttpExampleComponent} from "./http-example/http-example.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     ]},
   {path: 'shopping', component: ShoppingComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'http', component: HttpExampleComponent},
   {path: '**', redirectTo: '/'} //generic route should always be last, as routes get parsed top to bottom
 ];
 
