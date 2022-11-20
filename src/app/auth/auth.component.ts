@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
+import {Observable} from "rxjs";
+import {AuthResponseData} from "../../models/authResponseData";
 
 @Component({
   selector: 'app-auth',
@@ -13,8 +15,11 @@ export class AuthComponent implements OnInit {
   isLoginMode = true;
   submitMessage: string;
   switchToMode: string;
+  isLoading = false;
+  error: string;
 
   constructor(private authService: AuthService) { }
+
 
   ngOnInit(): void {
 
@@ -37,19 +42,23 @@ export class AuthComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.authForm);
-    console.log(this.authForm.get('email').value);
-    console.log(this.authForm.get('password').value);
+
+    let authObs: Observable<AuthResponseData>;
+
     if (!this.isLoginMode) {
-      this.authService.signUp(this.authForm.get('email').value, this.authForm.get('password').value).subscribe( data => {
-        console.log('signing up');
-      })
+      authObs = this.authService.signUp(this.authForm.get('email').value, this.authForm.get('password').value);
     } else {
-      this.authService.signIn(this.authForm.get('email').value, this.authForm.get('password').value).subscribe( data => {
-        console.log('signed in');
-        console.log(data);
-      })
+      authObs = this.authService.signIn(this.authForm.get('email').value, this.authForm.get('password').value);
     }
+
+    authObs.subscribe( data => {
+      console.log(data);
+      this.isLoading = false;
+    }, errorMessage => {
+      console.log(errorMessage);
+      this.error = errorMessage;
+      this.isLoading = false;
+    });
 
   }
 
