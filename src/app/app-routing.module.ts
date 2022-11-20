@@ -3,6 +3,8 @@ import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {AuthGuard} from "./auth-guard.service";
 import {RegisterComponent} from "./register/register.component";
+import {AuthComponent} from "./auth/auth.component";
+import {ExpenseComponent} from "./expense/expense.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -16,6 +18,8 @@ const appRoutes: Routes = [
   //   ]},
   // {path: 'shopping', component: ShoppingComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'auth', component: AuthComponent},
+  {path: 'expense', component: ExpenseComponent},
   {path: '**', redirectTo: '/'} //generic route should always be last, as routes get parsed top to bottom
 ];
 

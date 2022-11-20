@@ -1,1 +1,18 @@
-<p>auth works!</p>
+<div class="row">
+  <div class="col-md-6">
+    <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <div class="form-control">
+<!--        <label for="email">E-mail</label>-->
+        <input type="text" id="email" class="form-control" formControlName="email" placeholder="email">
+      </div>
+      <div class="form-control">
+<!--        <label for="password">Password</label>-->
+        <input type="password" id="password" class="form-control" formControlName="password" placeholder="password">
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary" type="submit">{{submitMessage}}</button>
+        <button class="btn btn-info" type="button" (click)="onSwitchMode()">Switch to {{switchToMode}}</button>
+      </div>
+    </form>
+  </div>
+</div>
