@@ -8,12 +8,16 @@ import {BasicHighlightDirective} from "./directives/basic-highlight.directive";
 import {DropdownDirective} from "./directives/dropdown.directive";
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from "./app-routing.module";
-import {AuthService} from "./auth.service";
+import {DemoAuthService} from "./demoAuth.service";
 import {AuthGuard} from "./auth-guard.service";
 import { RegisterComponent } from './register/register.component';
 import {ShortenPipe} from "./pipes/shorten.pipe";
 import {HttpClientModule} from "@angular/common/http";
 import { ExpenseComponent } from './expense/expense.component';
+import { AuthComponent } from './auth/auth.component';
+import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
+import { IncomeComponent } from './income/income.component';
+import {AuthService} from "./services/auth.service";
 
 
 
@@ -26,7 +30,10 @@ import { ExpenseComponent } from './expense/expense.component';
     HomeComponent,
     RegisterComponent,
     ShortenPipe,
-    ExpenseComponent
+    ExpenseComponent,
+    AuthComponent,
+    ExpenseEditComponent,
+    IncomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,7 @@ import { ExpenseComponent } from './expense/expense.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [DemoAuthService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
