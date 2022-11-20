@@ -1,1 +1,4 @@
-<p>expense works!</p>
+<div class="btn-group">
+  <button class="btn btn-primary" (click)="showEditForm()">Edit expenses</button>
+</div>
+<app-expense-edit *ngIf="showForm"></app-expense-edit>

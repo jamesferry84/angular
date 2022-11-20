@@ -1,1 +1,13 @@
-<p>expense-edit works!</p>
+<div class="container">
+  <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+    <div>
+      <input type="text" placeholder="name" class="form-control" formControlName="name">
+    </div>
+    <div>
+      <input class="form-control" placeholder="amount" type="number" min="0" formControlName="amount">
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
