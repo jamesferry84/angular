@@ -1,13 +1,26 @@
 <div class="row">
   <form>
-    <div>
-      <input type="text" placeholder="name">
-    </div>
-    <div>
-      <input type="number" placeholder="gross annual salary">
+    <div class="col-md-6">
+      <div>
+        <input type="text" class="form-control" placeholder="name">
+      </div>
+      <div>
+        <input type="number" min="0" class="form-control" placeholder="gross annual salary">
+      </div>
     </div>
   </form>
 </div>
 <div class="row">
+  <ul class="list-unstyled">
+    <li *ngFor="let income of dummyData">
+      {{income.name}} - £{{income.amount}}
+    </li>
+  </ul>
+</div>
+<div class="row">
   <p>Tax breakdown</p>
+  <p>{{taxableAmount}}</p>
+  <p>{{nationalInsuranceToPay}}</p>
+  <p>Salary after tax: {{salaryAfterTax}} : Monthly: {{salaryAfterTax / 12}}</p>
+  <p>Salary after tax and NI: {{salaryAfterTax - nationalInsuranceToPay}} : Monthly: {{(salaryAfterTax - nationalInsuranceToPay) / 12}}</p>
 </div>
