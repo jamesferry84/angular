@@ -5,6 +5,7 @@ import {AuthGuard} from "./auth-guard.service";
 import {RegisterComponent} from "./register/register.component";
 import {AuthComponent} from "./auth/auth.component";
 import {ExpenseComponent} from "./expense/expense.component";
+import {IncomeComponent} from "./income/income.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'auth', component: AuthComponent},
   {path: 'expense', component: ExpenseComponent},
+  {path: 'income', component: IncomeComponent},
   {path: '**', redirectTo: '/'} //generic route should always be last, as routes get parsed top to bottom
 ];
 

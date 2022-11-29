@@ -18,6 +18,7 @@ import { AuthComponent } from './auth/auth.component';
 import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
 import { IncomeComponent } from './income/income.component';
 import {AuthService} from "./services/auth.service";
+import {TaxService} from "./services/tax.service";
 
 
 
@@ -42,7 +43,7 @@ import {AuthService} from "./services/auth.service";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [DemoAuthService, AuthGuard, AuthService],
+  providers: [DemoAuthService, AuthGuard, AuthService, TaxService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
