@@ -7,10 +7,10 @@
       [routerLinkActiveOptions]="{exact: true}">
         Finance App
       </a>
-      <a class="navbar-brand" routerLinkActive="active" routerLink="income" *ngIf="isLoggedIn">Income</a>
-      <a class="navbar-brand" routerLinkActive="active" routerLink="expense" *ngIf="isLoggedIn">Expense</a>
+      <a class="navbar-brand" routerLinkActive="active" routerLink="income" *ngIf="!isLoggedIn">Income</a>
+      <a class="navbar-brand" routerLinkActive="active" routerLink="expense" *ngIf="!isLoggedIn">Expense</a>
       <a class="navbar-brand" routerLinkActive="active" routerLink="auth" *ngIf="!isLoggedIn">Authentication</a>
-      <a class="navbar-brand" *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+      <a class="navbar-brand" *ngIf="!isLoggedIn" (click)="logout()">Logout</a>
 <!--      <a *ngIf="!loggedIn" class="navbar-brand" routerLinkActive="active" routerLink="register">Register</a>-->
     </div>
   </div>
